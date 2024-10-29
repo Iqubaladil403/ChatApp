@@ -20,21 +20,21 @@ app.use(cors({
 
 
 const PORT = process.env.PORT || 3001;
-// const URI = process.env.MONGODB_URI;
+const URI = process.env.MONGODB_URI;
 
-// try {
-//     mongoose.connect(URI);
-//     console.log("Connected to MongoDB");
-// } catch (error) {
-//     console.log(error);
-// }
+try {
+    mongoose.connect(URI);
+    console.log("Connected to MongoDB");
+} catch (error) {
+    console.log(error);
+}
 
 
-const mongoURI =  "mongodb://localhost/chatDb";
-mongoose
-  .connect(mongoURI)
-  .then(() => console.log("MongoDB is connected"))
-  .catch((err) => console.log("MongoDB connection error:", err.message));
+// const mongoURI =  "mongodb://localhost/chatDb";
+// mongoose
+//   .connect(mongoURI)
+//   .then(() => console.log("MongoDB is connected"))
+//   .catch((err) => console.log("MongoDB connection error:", err.message));
 
 
 //routes
