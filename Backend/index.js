@@ -18,12 +18,15 @@ app.use(cors({
   credentials: true, // if using cookies for auth
 }));
 
-
+//mongodb connection
 const PORT = process.env.PORT || 3001;
 const URI = process.env.MONGODB_URI;
 
 try {
-    mongoose.connect(URI);
+    mongoose.connect(URI,{
+      useNewUrlParser: true,
+    useUnifiedTopology: true
+    });
     console.log("Connected to MongoDB");
 } catch (error) {
     console.log(error);
