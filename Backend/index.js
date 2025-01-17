@@ -14,8 +14,8 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: 'http://localhost:4000',
-  credentials: true, // if using cookies for auth
+  origin: process.env.NODE_ENV === 'production' ? 'https://your-frontend-domain.com' : 'http://localhost:3000',
+  credentials: true,
 }));
 
 //mongodb connection

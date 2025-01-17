@@ -5,8 +5,8 @@ import useConversation from "../../statemanage/useConversation.js";
 
 
 function Chatuser() {
-  // const profileImagePath = `${import.meta.env.VITE_PUBLIC_URL}/adil's profile photo.png`;
-  const profileImagePath = '/profile.jpg'; // This should work correctly
+
+  const profileImagePath = '/profile.jpg'; 
 
   const { selectedConversation } = useConversation();
   const { onlineUsers } = useSocketContext();
